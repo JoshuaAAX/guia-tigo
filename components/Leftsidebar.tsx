@@ -13,6 +13,13 @@ const leftSidebarItems = [
       { id: 'introducción', label: 'Introducción', path: '/capitulos/introduccion' },
       { id: 'requisitos', label: 'Requisitos', path: '/capitulos/requisitos' },
       { id: 'instalación', label: 'Instalación', path: '/capitulos/instalacion' },
+      { id: 'cuenta', label: 'Crear Cuenta', path: '/capitulos/cuenta' },
+      { id: 'iniciar', label: 'Iniciar Sesión', path: '/capitulos/iniciar' },
+      { id: 'paquetes', label: 'Paquetes', path: '/capitulos/paquetes' },
+      { id: 'recargas', label: 'Recargas', path: '/capitulos/recargas' },
+      { id: 'saldo', label: 'Consulta Saldo', path: '/capitulos/saldo' },
+      { id: 'pagar', label: 'Pagar Factura', path: '/capitulos/pagar' },
+      { id: 'redimir', label: 'Redimir Bonos', path: '/capitulos/redimir' },
     ]
   },
  
