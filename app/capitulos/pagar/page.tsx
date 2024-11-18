@@ -31,7 +31,7 @@ export default function PagarFacturaPage() {
               Paso 1: Presiona el botón Factura en la parte inferior izquierda
             </p>
             <img 
-              src="/api/placeholder/300/600" 
+              src="/pagar_tigo.png" 
               alt="Botón de factura en la navegación" 
               className="border border-gray-200 rounded-lg shadow-sm mb-8"
             />

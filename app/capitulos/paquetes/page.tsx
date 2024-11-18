@@ -1,68 +1,126 @@
 'use client'
 
-import React from 'react';
+import { Button } from '@/components/ui/button'
+import { useRouter, usePathname } from 'next/navigation'
+import { ScrollArea } from "@/components/ui/scroll-area"
+import React, { useState, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
 
-export default function CompraPaquetesPage() {
+const leftSidebarItems = [
+  {
+    title: 'Primeros Pasos',
+    items: [
+      { id: 'introducción', label: 'Introducción', path: '/capitulos/introduccion' },
+      { id: 'requisitos', label: 'Requisitos', path: '/capitulos/requisitos' },
+      { id: 'instalación', label: 'Instalación', path: '/capitulos/instalacion' },
+      { id: 'cuenta', label: 'Crear Cuenta', path: '/capitulos/cuenta' },
+      { id: 'iniciar', label: 'Iniciar Sesión', path: '/capitulos/iniciar' },
+      { id: 'paquetes', label: 'Paquetes', path: '/capitulos/paquetes' },
+      { id: 'recargas', label: 'Recargas', path: '/capitulos/recargas' },
+      { id: 'saldo', label: 'Consulta Saldo', path: '/capitulos/saldo' },
+      { id: 'pagar', label: 'Pagar Factura', path: '/capitulos/pagar' },
+      { id: 'redimir', label: 'Redimir Bonos', path: '/capitulos/redimir' },
+    ]
+  },
+  {
+    title: 'Segundos Pasos',
+    items: [
+      { id: "algo", label: "algo mejorcito", path: '/' }
+    ]
+  },
+  {
+    title: 'Avanzado',
+    items: [
+      { id: "preguntas", label: "Preguntas Frecuentes", path: '/' }
+    ]
+  }
+]
+
+export default function LeftSidebar() {
+  const router = useRouter()
+  const pathname = usePathname()
+  const [activeSection, setActiveSection] = useState('')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Actualizar la sección activa basada en la ruta actual
+  useEffect(() => {
+    const currentPath = pathname
+    const activeItem = leftSidebarItems.flatMap(section => section.items)
+      .find(item => item.path === currentPath)
+
+    if (activeItem) {
+      setActiveSection(activeItem.id)
+    }
+  }, [pathname])
+
+  const handleNavigation = (path: string, id: string) => {
+    setActiveSection(id)
+    router.push(path)
+    setIsMobileMenuOpen(false)
+  }
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
   return (
-    <div className="py-12 px-8">
-      <nav className="text-sm mb-8">
-        <ul className="flex space-x-2 text-gray-500">
-          <li><span className="text-[#004691]">Compras</span></li>
-          <li>•</li>
-          <li>Compra Paquetes</li>
-        </ul>
-      </nav>
+    <>
+      {/* Mobile Menu Toggle */}
+      <button 
+        className="lg:hidden fixed top-4 left-4 z-50 bg-white p-2 rounded-md shadow"
+        onClick={toggleMobileMenu}
+      >
+        {isMobileMenuOpen ? <X /> : <Menu />}
+      </button>
 
-      <h2 className="text-4xl font-bold mb-8 text-gray-900">
-        Compra Paquetes
-      </h2>
-
-      <div className="prose max-w-none">
-        <div className="space-y-12">
-          {/* Paso 1 */}
-          <div>
-            <p className="text-lg mb-6">
-              Paso 1: presiona el botón compras y desplázate hacia abajo para encontrar el paquete que se adapte mejor a ti
-            </p>
-            <img 
-              src="/1_paquetes.png" 
-              alt="Lista de paquetes disponibles" 
-              className="border border-gray-200 rounded-lg shadow-sm mb-8"
-            />
-          </div>
-
-          {/* Paso 2 */}
-          <div>
-            <p className="text-lg mb-6">
-              Paso 2: selecciona tu paquete y presiona en el botón azul a la derecha del paquete
-            </p>
-            <img 
-              src="/2_paquetes.png" 
-              alt="Selección de paquete" 
-              className="border border-gray-200 rounded-lg shadow-sm mb-8"
-            />
-          </div>
-
-          {/* Paso 3 */}
-          <div>
-            <p className="text-lg mb-6">
-              Paso 3: Verifica los detalles del paquete, selecciona la frecuencia de la compra, selecciona 1 vez si solo quieres comprar el paquete una sola vez ó selecciona recurrente para que se compre un nuevo paquete cada vez que se te termine el actual. Escoge tu forma de pago e ingresa los datos necesarios según la forma de pago.
-            </p>
-            <img 
-              src="/3_paquetes.png" 
-              alt="Configuración y pago del paquete" 
-              className="border border-gray-200 rounded-lg shadow-sm mb-8"
-            />
-          </div>
-
-          {/* Mensaje de éxito */}
-          <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-            <p className="text-lg text-green-700 font-medium">
-              Felicidades compró un paquete con éxito 🙂
-            </p>
-          </div>
+      {/* Sidebar for Desktop and Mobile */}
+      <aside 
+        className={`
+          fixed inset-y-0 left-0 z-40 w-64 bg-white 
+          transform transition-transform duration-300 ease-in-out
+          lg:relative lg:translate-x-0
+          ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+        `}
+      >
+        <div className="sticky top-0 h-screen">
+          <ScrollArea className="h-full">
+            <nav className="py-6">
+              {leftSidebarItems.map((section) => (
+                <div key={section.title} className="mb-5">
+                  <h2 className="text-sm font-semibold text-gray-500 mb-2 px-3">
+                    {section.title}
+                  </h2>
+                  <ul>
+                    {section.items.map((item) => (
+                      <li key={item.id}>
+                        <Button
+                          variant="ghost"
+                          className={`w-full justify-start text-sm px-3 ${
+                            activeSection === item.id
+                              ? 'bg-blue-50 text-blue-600'
+                              : 'text-gray-700 hover:bg-gray-50'
+                          }`}
+                          onClick={() => handleNavigation(item.path, item.id)}
+                        >
+                          {item.label}
+                        </Button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </nav>
+          </ScrollArea>
         </div>
-      </div>
-    </div>
-  );
+      </aside>
+
+      {/* Mobile overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+          onClick={toggleMobileMenu}
+        />
+      )}
+    </>
+  )
 }
