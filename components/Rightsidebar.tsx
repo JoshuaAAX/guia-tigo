@@ -4,9 +4,8 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
-import { ScrollArea } from "@/components/ui/scroll-area"
-import React, { useState, useRef, useEffect } from 'react'
+
+import React, { useState } from 'react'
 
 
 const rightSidebarItems = [
@@ -18,9 +17,9 @@ const rightSidebarItems = [
 ]
 
 export function RightSidebar() {
-    const router = useRouter()
-    const [activeSection, setActiveSection] = useState('')
-    const sectionRefs = useRef({})
+    
+    const [activeSection] = useState('')
+    
 return(
     <aside className="w-64 flex-shrink-0">
             <div className="sticky top-0 pt-8 pl-6">

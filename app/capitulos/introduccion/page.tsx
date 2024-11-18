@@ -1,7 +1,7 @@
 
 'use client'
 
-import { Lightbulb, AlertCircle } from 'lucide-react'
+import { Lightbulb } from 'lucide-react'
 
 export default function Introduccion() {
     return (

@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button'
 import { useRouter, usePathname } from 'next/navigation'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const leftSidebarItems = [
   {
@@ -22,7 +22,7 @@ export function LeftSidebar() {
   const router = useRouter()
   const pathname = usePathname()
   const [activeSection, setActiveSection] = useState('')
-  const sectionRefs = useRef({})
+  
 
   // Actualizar la sección activa basada en la ruta actual
   useEffect(() => {
