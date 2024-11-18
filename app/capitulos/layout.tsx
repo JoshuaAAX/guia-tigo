@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { LeftSidebar } from '@/components/Leftsidebar'
-import { RightSidebar } from '@/components/Rightsidebar'
+
 
 export default function CapitulosLayout({ children }: { children: ReactNode }) {
   return (
