@@ -26,13 +26,15 @@ const leftSidebarItems = [
   {
     title: 'Segundos Pasos',
     items: [
-      { id: "algo", label: "algo mejorcito", path: '/' }
+      { id: "algo", label: "algo mejoorcito", path: '/' }
     ]
   },
   {
     title: 'Avanzado',
     items: [
-      { id: "preguntas", label: "Preguntas Frecuentes", path: '/' }
+      { id: "sucripcion", label: "Activar Suscripción", path: '/capitulos/suscripcion' },
+      { id: "realizar", label: "Realizar Compras", path: '/capitulos/realizar' },
+      { id: "Seguridad", label: "Seguridad", path: '/capitulos/seguridad' }
     ]
   }
 ]
