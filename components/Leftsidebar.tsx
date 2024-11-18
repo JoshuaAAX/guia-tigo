@@ -20,8 +20,22 @@ const leftSidebarItems = [
       { id: 'saldo', label: 'Consulta Saldo', path: '/capitulos/saldo' },
       { id: 'pagar', label: 'Pagar Factura', path: '/capitulos/pagar' },
       { id: 'redimir', label: 'Redimir Bonos', path: '/capitulos/redimir' },
+    ],
+  },
+
+  {
+    title: 'Segundos Pasos',
+    items: [
+      { id: "algo", label: "algo mejorcito", path: '/' }
     ]
   },
+
+  {
+    title: 'avanzado',
+    items: [
+      { id: "algo", label: "preguntas frecuentes", path: '/' }
+    ]
+  }
  
 ]
 

@@ -22,7 +22,7 @@ export default function HazRecargasPage() {
                 Paso 1: en la sección de compras, presiona el botón de recargas
               </p>
               <img 
-                src="/api/placeholder/300/600" 
+                src="/1_recargas.png" 
                 alt="Sección de recargas" 
                 className="border border-gray-200 rounded-lg shadow-sm mb-8"
               />
@@ -34,7 +34,7 @@ export default function HazRecargasPage() {
                 Paso 2: Selecciona el valor que deseas recargar y presiona el botón continuar
               </p>
               <img 
-                src="/api/placeholder/300/600" 
+                src="/2_recargas.png" 
                 alt="Selección de valor de recarga" 
                 className="border border-gray-200 rounded-lg shadow-sm mb-8"
               />
@@ -46,7 +46,7 @@ export default function HazRecargasPage() {
                 Paso 3: Selecciona el número de línea a recargar y el método de pago
               </p>
               <img 
-                src="/api/placeholder/300/600" 
+                src="/3_recargas.png" 
                 alt="Selección de línea y método de pago" 
                 className="border border-gray-200 rounded-lg shadow-sm mb-8"
               />

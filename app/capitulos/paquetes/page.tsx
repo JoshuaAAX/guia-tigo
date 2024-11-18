@@ -25,7 +25,7 @@ export default function CompraPaquetesPage() {
               Paso 1: presiona el botón compras y desplázate hacia abajo para encontrar el paquete que se adapte mejor a ti
             </p>
             <img 
-              src="/api/placeholder/300/600" 
+              src="/1_paquetes.png" 
               alt="Lista de paquetes disponibles" 
               className="border border-gray-200 rounded-lg shadow-sm mb-8"
             />
@@ -37,7 +37,7 @@ export default function CompraPaquetesPage() {
               Paso 2: selecciona tu paquete y presiona en el botón azul a la derecha del paquete
             </p>
             <img 
-              src="/api/placeholder/300/600" 
+              src="/2_paquetes.png" 
               alt="Selección de paquete" 
               className="border border-gray-200 rounded-lg shadow-sm mb-8"
             />
@@ -49,7 +49,7 @@ export default function CompraPaquetesPage() {
               Paso 3: Verifica los detalles del paquete, selecciona la frecuencia de la compra, selecciona 1 vez si solo quieres comprar el paquete una sola vez ó selecciona recurrente para que se compre un nuevo paquete cada vez que se te termine el actual. Escoge tu forma de pago e ingresa los datos necesarios según la forma de pago.
             </p>
             <img 
-              src="/api/placeholder/300/600" 
+              src="/3_paquetes.png" 
               alt="Configuración y pago del paquete" 
               className="border border-gray-200 rounded-lg shadow-sm mb-8"
             />

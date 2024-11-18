@@ -43,7 +43,7 @@ export default function PagarFacturaPage() {
               Paso 2: presiona el botón pagar y paga con tu método de pago favorito
             </p>
             <img 
-              src="/api/placeholder/300/600" 
+              src="/1_pagar.png" 
               alt="Pantalla de pago de factura" 
               className="border border-gray-200 rounded-lg shadow-sm mb-8"
             />
