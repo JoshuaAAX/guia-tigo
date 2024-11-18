@@ -27,7 +27,7 @@ const leftSidebarItems = [
     title: 'Intermedio',
     items: [
       { id: "calidad", label: "Prueba de calidad red móvil", path: '/capitulos/calidad' },
-      { id: "robos", label: "bloquear tu celular y línea Tigo", path: '/capitulos/robos' }
+      { id: "robos", label: "Bloquear tu celular y línea Tigo", path: '/capitulos/robos' }
     ]
   },
   {
