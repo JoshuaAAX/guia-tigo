@@ -24,9 +24,9 @@ const leftSidebarItems = [
     ]
   },
   {
-    title: 'Segundos Pasos',
+    title: 'Intermedio',
     items: [
-      { id: "algo", label: "algo mejoorcito", path: '/' }
+      { id: "calidad", label: "Prueba de calidad red móvil", path: '/capitulos/calidad' }
     ]
   },
   {
